@@ -1,0 +1,69 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package studi_kasus.heuristik.astar;
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ *
+ * @author Shinichi
+ */
+// Node untuk menyimpan nilai node dan tetangganya.
+public class Node {
+    // Nilai untuk menyimpan nama node
+    private String nilai;
+    // Tetangga untuk menyimpan node tetangga dari node yang bersangkutan
+    private List<Node> tetangga;
+
+    // Constructor untuk menginisialisasi nilai dari node
+    public Node(String nilai) {
+        // Inisialisasi tetangga
+        tetangga = new ArrayList<>();
+        // nilai diambil dari parameter
+        this.nilai = nilai;
+    }
+
+    // fungsi untuk mengubah nilai dari node
+    public void setNilai(String nilai) {
+        // mengubah nilai dari parameter
+        this.nilai = nilai;
+    }
+
+    // Fungsi untuk mengembalikan nilai dari node
+    public String getNilai() {
+        // Mengembalikan nilai dari node
+        return nilai;
+    }
+
+    // fungsi untuk mengubah tetangga dari node
+    public void setTetangga(List<Node> tetangga) {
+        // mengubah tetangga dari parameter
+        this.tetangga = tetangga;
+    }
+
+    // Fungsi untuk mengembalikan tetangga dari node
+    public List<Node> getTetangga() {
+        // Mengembalikan tetangga dari node
+        return tetangga;
+    }
+
+    // fungsi untuk menambahkan tetangga dari node
+    public void addTetangga(Node node) {
+        // menambahkan tetangga dari parameter
+        tetangga.add(node);
+    }
+
+    // fungsi untuk mengecek apakah node sama atau tidak
+    @Override
+    public boolean equals(Object obj) {
+        // jika objek sama dengan node
+        if (obj instanceof Node) {
+            // mengembalikan nilai apakah nilai dari objek sama dengan nilai dari node
+            return ((Node) obj).nilai.equals(this.nilai);
+        }
+        // mengembalikan nilai false
+        return false;
+    }
+}
